@@ -1,5 +1,41 @@
+# Python
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+
+# Environment
 .env
-.vscode/settings.json
+
+# IDE
+.vscode-server/
+.vscode/
+.idea/
+
+# OS & System
 .DS_Store
+Thumbs.db
+.bash_history
+.bash_logout
+.bashrc
+.cache/
+.dotnet/
+.lesshst
+.profile
+.python_history
+.ssh/
+.sudo_as_admin_successful
+.wget-hsts
+
+# Personal files
+*.zip
+*.pdf
+*.install
+알약*
+alyac*
+
+# Logs
+*.log
