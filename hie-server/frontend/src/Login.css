@@ -1,0 +1,103 @@
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #f7f7f7;
+}
+
+.login-box {
+  display: flex;
+  width: 800px;
+  height: 350px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  background: white;
+}
+
+.login-left {
+  flex: 1;
+  background: #f2f2f2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid #ddd;
+}
+
+.login-logo {
+  width: 100px;
+  margin-bottom: 10px;
+}
+
+.login-title {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  color: #444;
+}
+
+.login-right {
+  flex: 2;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.input-group {
+  margin-bottom: 15px;
+}
+
+.input-group label {
+  font-size: 13px;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.login-options {
+  margin-bottom: 10px;
+  font-size: 13px;
+  color: #555;
+}
+
+.login-btn,
+.auth-btn {
+  background: #ee3d4a;
+  color: white;
+  padding: 10px;
+  font-weight: bold;
+  border: none;
+  width: 100%;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.auth-btn {
+  background: #555;
+}
+
+.login-btn:hover,
+.auth-btn:hover {
+  background: #c0343f;
+}
+
+.login-links {
+  font-size: 12px;
+  color: #777;
+  display: flex;
+  justify-content: space-between;
+}
+
+.helpdesk {
+  color: red;
+  font-weight: bold;
+  cursor: pointer;
+}

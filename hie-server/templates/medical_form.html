@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>진료기록 등록</title>
+  <style>
+    body {
+      font-family: 'Noto Sans KR', Arial, sans-serif;
+      background: #f7f9fc;
+      margin: 0;
+    }
+    .container {
+      background: white;
+      max-width: 600px;
+      margin: 48px auto;
+      border-radius: 16px;
+      box-shadow: 0 8px 36px #0002;
+      padding: 40px 30px 32px 30px;
+    }
+    h2 {
+      margin-top: 0;
+      text-align: center;
+      font-size: 2rem;
+      color: #0a367c;
+      letter-spacing: 1px;
+    }
+    label {
+      display: block;
+      margin-bottom: 6px;
+      color: #222;
+      font-weight: 600;
+    }
+    input, textarea, select {
+      width: 100%;
+      padding: 10px 8px;
+      border-radius: 6px;
+      border: 1px solid #bbb;
+      font-size: 1rem;
+      margin-bottom: 18px;
+      background: #f6f8fb;
+      transition: border-color .2s;
+    }
+    input:focus, textarea:focus {
+      border: 1.5px solid #0058b0;
+      background: #fff;
+      outline: none;
+    }
+    button {
+      background: #0058b0;
+      color: white;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 8px;
+      padding: 12px 32px;
+      cursor: pointer;
+      width: 100%;
+      font-weight: 600;
+      box-shadow: 0 2px 12px #0058b044;
+      margin-top: 10px;
+      letter-spacing: 1px;
+      transition: background .2s;
+    }
+    button:hover {
+      background: #003a70;
+    }
+    .flash {
+      text-align: center;
+      color: #1d871c;
+      background: #e8ffe8;
+      font-weight: bold;
+      border-radius: 8px;
+      margin-bottom: 18px;
+      padding: 12px 0 8px 0;
+      font-size: 1.05rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>진료기록 등록</h2>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        {% for category, msg in messages %}
+          <div class="flash">{{ msg }}</div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+    <form method="POST" autocomplete="off">
+      <label for="patientNo">등록번호</label>
+      <input type="text" name="patientNo" id="patientNo" required>
+      
+      <label for="name">이름</label>
+      <input type="text" name="name" id="name" required>
+      
+      <label for="ssn">주민등록번호</label>
+      <input type="text" name="ssn" id="ssn" required>
+      
+      <label for="department">진료과</label>
+      <input type="text" name="department" id="department" required>
+      
+      <label for="admDate">입원일</label>
+      <input type="date" name="admDate" id="admDate" value="{{ today }}" required readonly style="background:#eee; color:#888;">
+      
+      <label for="dischDate">퇴원일</label>
+      <input type="date" name="dischDate" id="dischDate" value="{{ today }}" required readonly style="background:#eee; color:#888;">
+      
+      <label for="reason">입원 사유</label>
+      <textarea name="reason" id="reason" rows="2"></textarea>
+      
+      <label for="present">현병력</label>
+      <textarea name="present" id="present" rows="2"></textarea>
+      
+      <button type="submit">등록하기</button>
+    </form>
+  </div>
+</body>
+</html>
